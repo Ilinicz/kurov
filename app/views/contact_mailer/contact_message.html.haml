@@ -1,0 +1,7 @@
+%p
+  New message received at #{ENV["DOMAIN"]}:
+%p --------------
+%p
+  From: #{@name} - #{@email}
+%p --------------
+= sanitize(line_break(@message), tags: %w(br))

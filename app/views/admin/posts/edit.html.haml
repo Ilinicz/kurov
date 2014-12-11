@@ -1,0 +1,10 @@
+- title("Редактирование статьи '#{@post.title}'")
+%h3.page-title
+  Редактирование статьи
+  %small= "'#{@post.title}'"
+%p
+  = link_to "Назад", admin_posts_dashboard_path
+%hr
+= render 'form'
+%hr
+= link_to "<i class='fa fa-minus-square'></i> Удалить статью".html_safe,admin_post_path(@post), method: :delete, class: "btn btn-small btn-danger"

@@ -10,6 +10,8 @@ class Admin::PostsController < Admin::BaseController
   def dashboard
     @published_post_count = Post.published.count
     @draft_post_count = Post.drafted.count
+    @published = Post.published.page(params[:page]).per(50)
+    @drafted = Post.drafted.page(params[:page]).per(50) 
   end
   
   def index
@@ -28,9 +30,9 @@ class Admin::PostsController < Admin::BaseController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to admin_posts_dashboard_path, notice: "New post published."
+      redirect_to admin_posts_dashboard_path, notice: "Новая статья успешно сохранена."
     else
-      flash[:alert] = "Post not published."
+      flash[:alert] = "Ошибка! Статья не была сохранена!"
       render :new
     end
   end
@@ -41,16 +43,16 @@ class Admin::PostsController < Admin::BaseController
   def update
     @post.slug = nil
     if @post.update(post_params)
-      redirect_to admin_posts_dashboard_path, notice: "Post successfully edited."
+      redirect_to admin_posts_dashboard_path, notice: "Статья успешно отредактирована."
     else
-      flash[:alert] = "The post was not edited."
+      flash[:alert] = "Ошибка! Статья не была сохранена!"
       render :edit
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to admin_posts_path, notice: "The post has been deleted."
+    redirect_to admin_posts_path, notice: "Статья была успешно удалена."
   end
   
   

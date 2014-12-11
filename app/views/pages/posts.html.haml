@@ -1,0 +1,14 @@
+- title("Posts")
+%h1 Posts
+- @posts.each do |post|
+  .title-box
+    %p
+      = link_to "#{post.title}", post_path(post.slug)
+      %br/
+      %span
+        %small
+          %em
+            = time_ago_in_words(post.updated_at)
+            ago
+.pagination-control.text-center
+  = paginate @posts

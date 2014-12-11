@@ -1,0 +1,8 @@
+- title(@post.title)
+.row
+  .col-sm-3
+    %h3
+      %small
+        %i.fa.fa-calendar>
+        \&nbsp;&nbsp;#{@post.updated_at.strftime("%Y, %B %-d")}
+  .col-sm-9= @post.content_html.html_safe

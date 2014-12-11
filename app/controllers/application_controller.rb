@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   
   # Redirects on successful sign in
   def after_sign_in_path_for(resource)
-    inside_path
+    admin_root_path
   end
   
   # Auto-sign out locked users
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
       sign_out current_user
       user_session = nil
       current_user = nil
-      flash[:alert] = "Your account is locked."
+      flash[:alert] = "Ваша аккаунт заблокирован!"
       flash[:notice] = nil
       redirect_to root_url
     end
@@ -50,5 +50,6 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :require_admin!
+
   
 end

@@ -1,0 +1,33 @@
+-#- if @post.errors.any?
+-#  %ul
+-#    - @post.errors.full_messages.each do |msg|
+-#      %li= msg
+= bootstrap_form_for [:admin, @post], role: "form" do |f|
+  .form-group
+    .row
+      .col-xs-12
+        = f.text_field :title, :autofocus => true, placeholder: "Заголовок статьи...", label: "Заголовок"
+  .form-group
+    .row
+      .col-xs-12
+        = f.text_area :content_md, rows: 15, placeholder: "Основной текст статьи...", label: 'Основной текст'
+  .form-group
+    .row
+      .col-xs-12
+        = f.check_box :draft, label: "сохранить в черновики"
+        
+  .form-group
+    
+    .row
+      .col-xs-12
+        = f.datetime_select :updated_at, label: "Дата публикации"
+  %hr
+    
+  .row
+    .col-xs-12.padded
+      %button.btn.btn-primary
+        %i.fa.fa-plus-square
+        Сохранить!
+      = link_to "- Отмена", admin_posts_dashboard_path
+
+     

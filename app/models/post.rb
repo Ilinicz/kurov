@@ -1,4 +1,8 @@
 class Post < ActiveRecord::Base
+  require 'babosa'
+  include R18n::Translated
+
+
   # Use friendly_id
   extend FriendlyId
   friendly_id :title, use: :slugged
@@ -26,5 +30,8 @@ class Post < ActiveRecord::Base
     where(draft: true)
     .order("updated_at DESC")
   }
-  
+
+  def normalize_friendly_id(input)
+    input.to_s.to_slug.normalize(transliterations: :russian).to_s
+  end
 end

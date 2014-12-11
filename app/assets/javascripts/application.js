@@ -13,7 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require rails-timeago-all
 //= require bootstrap 
 //= require analytics
-//= require common
+//= require_tree .
+
+
+
+
+
+
+
+
 

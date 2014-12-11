@@ -1,0 +1,33 @@
+- title("Панель администратора")
+%h2
+  Управление
+  %small Панель администратора
+.row
+  .col-sm-4
+    -#%h3 Разделы:
+    -#%h4
+    -#  = link_to "Пользователи", admin_users_path
+    -#  %small
+    -#    = "#{@count}" 
+    %h4
+      = link_to "Статьи", admin_posts_dashboard_path
+      %small
+        = "#{@post_count}"
+    %hr/
+
+            
+  .current-session-block.small-text
+    %h6 Текущая сессия:
+    %ul.list-unstyled
+      %li
+        = link_to current_user.email, edit_admin_user_path(current_user)
+        %br
+        %small
+          Вход:
+          - unless current_user.current_sign_in_at.nil?
+            = timeago_tag(current_user.current_sign_in_at)
+            
+          - else
+            0
+        %br
+        %small IP: #{current_user.current_sign_in_ip}

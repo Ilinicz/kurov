@@ -1,0 +1,18 @@
+.row
+  .col-sm-6.col-sm-offset-3
+    %h2.text-center.space-top-md Вход в панель администратора
+    %hr
+    .col-xs-8.col-xs-offset-2.space-top-md
+      = bootstrap_form_for(resource, :as => resource_name, |
+        :url => session_path(resource_name),     |
+        role: "form") do |f|                     |
+  
+        = f.text_field :email, :autofocus => true, label: "Логин(email)"
+  
+        = f.password_field :password, label: "Пароль"
+        - if devise_mapping.rememberable?
+  
+          = f.check_box :remember_me, label: "Запомнить меня"
+  
+        = f.submit "Войти", class: "btn btn-primary"
+      = render "devise/shared/links"

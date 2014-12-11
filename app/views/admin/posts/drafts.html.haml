@@ -1,0 +1,20 @@
+- title("Черновики")
+%h2.page-title
+  Черновики
+  %small Статьи, сохраненные в черновики
+%p= link_to "Вернуться назад", admin_posts_dashboard_path
+%hr/
+%p.pagination-summary= "Всего статей: #{@posts.count}"
+= paginate @posts
+%hr/
+%ul.fa-ul
+  - @posts.each do |post|
+    %li.margin-md-down
+      %i.fa.fa-arrow-circle-o-right.small>
+      \&nbsp;&nbsp;
+      \#{link_to post.title, edit_admin_post_path(post.slug)}
+      %br/
+      %small.x-small-text
+        about #{time_ago_in_words(post.updated_at)} ago
+%hr/
+= paginate @posts

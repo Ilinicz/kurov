@@ -1,0 +1,25 @@
+- title("Contact")
+%h1.page-title Contact
+.row
+  .col-sm-6
+    = form_tag email_confirmation_path, method: 'post', html: {role: "form"} do
+      .form-group
+        = label_tag :name, "Your name"
+        .row
+          .col-xs-12
+            = text_field_tag :name, @name, placeholder: "Enter your name...", :autofocus => true, class: "form-control"
+      .form-group
+        = label_tag :email, "Your email"
+        .row
+          .col-xs-12
+            = text_field_tag :email, @email, placeholder: "Enter your email...", class: "form-control"
+      .form-group
+        = label_tag :message, "Your message"
+        .row
+          .col-xs-12
+            = text_area_tag :message, @message, placeholder: "Enter your message...", rows: 10, class: "form-control"
+      .row
+        .col-xs-12.padded
+          %button.btn.btn-primary
+            %i.fa.fa-envelope
+            Send

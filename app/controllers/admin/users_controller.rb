@@ -35,9 +35,9 @@ class Admin::UsersController < Admin::BaseController
     if @user.valid?
       @user.skip_reconfirmation!
       @user.save
-      redirect_to admin_users_path, notice: "#{@user.email} updated."
+      redirect_to admin_users_path, notice: "#{@user.email} обновлен."
     else
-      flash[:alert] = "#{old_email} couldn't be updated."
+      flash[:alert] = "#{old_email} не может быть обновлен."
       render :edit
     end
   end
@@ -48,7 +48,7 @@ class Admin::UsersController < Admin::BaseController
   def set_user
     @user = User.find(params[:id])
   rescue
-    flash[:alert] = "The user with an id of #{params[:id]} doesn't exist."
+    flash[:alert] = "Пользователь с идентификатором #{params[:id]} не существует."
     redirect_to admin_users_path
   end
   

@@ -1,0 +1,20 @@
+- title("Опубликованные статьи")
+%h3.page-title
+  Статьи
+  %small Опубликованные
+%p= link_to "Вернуться назад", admin_posts_dashboard_path
+%hr/
+%p.pagination-summary= "Всего статей: #{@posts.count}"
+= paginate @posts
+%hr/
+%ul.fa-ul
+  - @posts.each do |post|
+    %li.margin-md-down
+      %i.fa.fa-arrow-circle-o-right.small>
+      = link_to post.title, edit_admin_post_path(post.slug)
+      %br
+      %small.x-small-text
+        Опубликовано
+        = timeago_tag post.updated_at 
+%hr/
+= paginate @posts

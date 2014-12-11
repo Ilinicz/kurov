@@ -1,0 +1,37 @@
+- title("Posts Dashboard")
+.row
+  .col-sm-8
+    %h2.page-title
+      Статьи
+      %small Панель управления статьями
+  .col-sm-4
+    .pull-right.space-top-md= link_to "Создать новую статью", new_admin_post_path, class: "btn btn-success"
+
+%p= link_to "Вернуться на главную", admin_root_path
+%hr/
+.row
+  .col-sm-6
+    %h4 
+      Опубликованные статьи(#{link_to @published_post_count, admin_posts_path})
+    %ul.fa-ul
+      - @published.each do |post|
+        %li.margin-md-down
+          %i.fa.fa-arrow-circle-o-right.small
+          = link_to post.title, edit_admin_post_path(post.slug)
+          %br
+          %small.x-small-text
+            Опубликовано
+            = timeago_tag post.updated_at 
+  .col-sm-6
+    %h4
+      В черновиках(#{link_to @draft_post_count, admin_posts_drafts_path})
+    %ul.fa-ul
+      - @drafted.each do |post|
+        %li.margin-md-down
+          %i.fa.fa-arrow-circle-o-right.small>
+          = link_to post.title, edit_admin_post_path(post.slug)
+          %br
+          %small.x-small-text
+            Опубликовано
+            = timeago_tag post.updated_at 
+  
