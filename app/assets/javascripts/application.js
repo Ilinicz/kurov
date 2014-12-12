@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require_tree ./lib
 //= require rails-timeago-all
 //= require bootstrap 
 //= require analytics
-//= require_tree .
+//= require common
 
 
 
