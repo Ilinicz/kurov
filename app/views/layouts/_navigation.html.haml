@@ -1,12 +1,11 @@
 %nav.navbar.navbar-default.navbar-fixed-top
+  .pull-left.space-top-xs= image_tag "shape4.png", size: '150', style: "opacity:0.7;"
+  .pull-right.space-top-xs= image_tag "shape4.png", size: '150', style: "opacity:0.7;"
+
+  .intro
+    %h2 Более 30 лет с верой в человека
+    %h3 Вадим Александрович Куров
   .container
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        = render 'layouts/navigation_links'
+    %ul.nav.navbar-nav
+      = render 'layouts/navigation_links'
+

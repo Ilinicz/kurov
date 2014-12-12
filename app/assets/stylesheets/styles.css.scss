@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic);
 .current-session-block {
   position: fixed;
   bottom: 2%;
@@ -11,7 +12,7 @@
 #top, #bottom, #left, #right {
   background-attachment: scroll;
   background-clip: border-box;
-  background-color: rgba(230,210,172, 1);
+  background-color: #797066;
   background-image: none;
   background-origin: padding-box;
   background-position: 0 0;
@@ -49,5 +50,98 @@
 
 .navbar {
   z-index: 9999;
+  box-shadow:  0px 0px 4px 0px rgba(46,34,31, 0.5);
+  //background-color: #fff;
+  //border-bottom: 2px solid #797066;
+  //border-top: 4px solid #D5CFA7
+  border-right: 20px solid #65594D;
+  border-left: 20px solid #65594D;
+  border-bottom: 4px solid #65594D;
+  box-sizing: border-box !important;
+
+
+  .intro {
+    //display: block;
+    text-align: center;
+    position: relative;
+    //border-top: 4px solid #797066;
+    h2, h3{
+      font-family: 'Marck Script', cursive;
+      font-weight: 100;
+      padding-top: 0;
+      margin-top: 6px;
+
+    }
+    h3 {
+      margin-top: -10px;
+      font-weight: 100;
+    }
+
+    &:before{
+      content: "" ;
+      position: absolute;
+      left: 12%%;
+      top: 50%%;
+      width: 20%;
+      height: 2px;
+      background: #797066;
+      
+
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 12%;
+      top: 50%;
+      width: 20%;
+      height: 2px;
+      background: #797066;
+    }
+  }
+
 }
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar  {
+  text-align: center;
+  display: inline;
+}
+
+.navbar-nav li {
+  &:after {
+    content: '~';
+    position: absolute;
+    top: 10px;
+    right: -5px;
+    font-size: 20px;
+    font-weight: 100;
+    color: #797066;
+  }
+  &:last-child {
+    &:after {
+      content: "";
+    }
+  }
+}
+li.dropdown li:after {
+  content: "";
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    border-width: 2px;
+    margin-top: -6px;
+ }
+
+#footer {
+  background: rgb(46,34,31);
+
+}
+
 

@@ -3,6 +3,7 @@ Kurov::Application.routes.draw do
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
   get "/contact", to: "pages#contact", as: "contact"
+  get "/cabinet", to: "pages#cabinet", as: "cabinet"
   post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
   
   get "blog", to: "pages#posts", as: "posts"

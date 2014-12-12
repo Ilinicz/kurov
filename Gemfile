@@ -14,6 +14,8 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '2.2.5'
 gem 'bcrypt', '3.1.9'
 
+
+gem 'active_link_to'
 gem 'r18n-rails'
 gem 'rails-timeago', '~> 2.0'
 gem 'kaminari', '0.16.1'

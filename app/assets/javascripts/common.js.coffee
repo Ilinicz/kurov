@@ -1,7 +1,17 @@
-ready = ->
+$ ->
 
   $("nav.navbar-fixed-top").autoHidingNavbar
     animationDuration: 500
+    hideOffset: 10;
+
+  $.srSmoothscroll
+    step: 55
+    speed: 300
+    ease: "linear"
+
+  $("a[href=\"" + @location.pathname + "\"]").parent().addClass "active"
+  
+
 
   window.setTimeout (->
     $(".alert").fadeTo(3000, 0).slideDown 500, ->
@@ -11,5 +21,6 @@ ready = ->
     return
   ), 1000
 
-$(document).ready(ready)
-$(document).on('page:change', ready)
+
+
+
