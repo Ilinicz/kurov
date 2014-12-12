@@ -1,11 +1,20 @@
-%nav.navbar.navbar-default.navbar-fixed-top
-  .pull-left.space-top-xs= image_tag "shape4.png", size: '150', style: "opacity:0.7;"
-  .pull-right.space-top-xs= image_tag "shape4.png", size: '150', style: "opacity:0.7;"
-
-  .intro
-    %h2 Более 30 лет с верой в человека
-    %h3 Вадим Александрович Куров
+%nav.navbar.navbar-default
   .container
-    %ul.nav.navbar-nav
-      = render 'layouts/navigation_links'
+    .row.space-top-sm
+      .col-xs-1.hidden-xs
+        
+      .col-xs-9.nav-center
+        .intro
+          %h3 Более 30 лет с верой в человека
+          %h2 Вадим Александрович Куров
+          %h5 психолог - психиатр - психотерапевт
+        %ul.nav.navbar-nav
+          = render 'layouts/navigation_links'
+      .col-xs-2.col-sm-2.nav-contact
+        %span +7 (495) 514-44-22
+        .clearfix
+        %span +7 (495) 452-03-56
+        .clearfix
+        %span Kurov07@mail.ru
+        .pull-right= image_tag "shape4.png", size: '120', style: "opacity:0.7;"
 

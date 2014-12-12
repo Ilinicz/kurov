@@ -9,13 +9,13 @@ gem 'coffee-rails', '4.1.0'
 gem 'haml-rails'
 gem 'html2haml'
 gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jquery-turbolinks'
+#gem 'turbolinks'
+#gem 'jquery-turbolinks'
 gem 'jbuilder', '2.2.5'
 gem 'bcrypt', '3.1.9'
 
 
-gem 'active_link_to'
+
 gem 'r18n-rails'
 gem 'rails-timeago', '~> 2.0'
 gem 'kaminari', '0.16.1'

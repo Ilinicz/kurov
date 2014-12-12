@@ -1,6 +1,6 @@
 $ ->
 
-  $("nav.navbar-fixed-top").autoHidingNavbar
+  $("nav.navbarsa").autoHidingNavbar
     animationDuration: 500
     hideOffset: 10;
 

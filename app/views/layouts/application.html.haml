@@ -12,20 +12,20 @@
     = timeago_script_tag
     
   %body
-    #left
-    #top
-    #right
-    #bottom
+    //#left
+    //#top
+    //#right
+    //#bottom
     #wrap
       %header
-        
+
         = render 'layouts/navigation'
       .container
         = render 'layouts/messages'
         .row
           .col-sm-12
             = yield
-    = render 'layouts/footer'
+      = render 'layouts/footer'
 
     
 

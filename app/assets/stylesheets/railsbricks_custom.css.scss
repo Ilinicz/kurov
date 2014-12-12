@@ -348,13 +348,32 @@ html,body {
 }
 
 body {
-  padding-top: 150px;
+  //padding-top: 150px;
 }
 
 #wrap {
+  //background: url('victorian1.png') top left;
+  padding-top: 0px ;
   min-height: 100%;
-  padding: 20px;
-  padding-bottom: 120px;
+  z-index: 2;
+  //position: relative;
+  //padding: 20px;
+  //padding-bottom: 120px;
+}
+
+#wrap:before {
+  content: '';
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  top: -230px;
+  left: -230px;
+  z-index: 1;
+  background-image: url('victorian1.png') ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  transform: rotate(135deg);
 }
 
 blockquote{
