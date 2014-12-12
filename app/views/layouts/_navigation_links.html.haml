@@ -10,7 +10,6 @@
 %li= link_to "Отзывы", '#'
 %li= link_to "Контакты", contact_path
 - if user_signed_in?
-  %li= link_to "Скрытая ", inside_path
-  - if current_user.admin?
-    %li= link_to "Управление", admin_root_path
+
+  %li= link_to "Управление", admin_root_path
   %li= link_to "Выход", destroy_user_session_path, data:{method: :delete}
