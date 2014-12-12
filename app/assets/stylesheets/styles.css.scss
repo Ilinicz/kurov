@@ -12,9 +12,11 @@
 #wrap {
   border: 16px solid #3E362F;
   box-sizing: border-box;
-  background: url('main-bg.jpg');
   background-repeat: repeat;
-  
+}
+
+body {
+  background: url(image_path('main-bg.jpg'));
 }
 
 .navbar {
@@ -144,7 +146,7 @@ li.dropdown li:after {
     border-width: 2px;
     border-top: 2px dashed;
     margin-top: -6px;
-    background-image: url('main-bg.jpg');
+    background-image: url(image_path('main-bg.jpg'));
  }
 
 #footer {

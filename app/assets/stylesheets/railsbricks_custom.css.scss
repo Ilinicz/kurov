@@ -368,8 +368,8 @@ body {
   height: 480px;
   top: -230px;
   left: -230px;
-  z-index: 1;
-  background-image: url('victorian1.png') ;
+  z-index: -1;
+  background-image: url(image_path('victorian1.png')) ;
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.2;
