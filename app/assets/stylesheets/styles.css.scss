@@ -95,8 +95,8 @@ body {
   font-weight: 100;
   text-align: right;
   display: inline-block;
-  margin-top: 10px;
-  padding-right: 25px;
+  //margin-top: 10px;
+  //padding-right: 25px;
 
 
   img {
@@ -150,14 +150,43 @@ li.dropdown li:after {
  }
 
 #footer {
-
-  background: rgb(46,34,31);
-  margin: 20px 0 20px 0;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background: #2e221f;
+  margin: 10% 0 0 0;
 }
+
+
 
 
 
 
 a {
   transition: all 0.5s ease !important;
+}
+
+@media(max-width:992px){
+  .nav-contact {
+    font-size: 18px;
+    
+  }
+  .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    margin: 0;
+    padding-left: 0;
+
+  }
+}
+
+@media(max-width:500px) {
+    .navbar .navbar-nav {
+    display: inline-block;
+    float: none !important;
+    vertical-align: top;
+    margin: 0;
+    padding-left: 0;
+
+  }
 }
